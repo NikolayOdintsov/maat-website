@@ -1,0 +1,314 @@
+
+/* :root {
+  --bg-sand: #e6d2a2;
+  --text-main: #1c1a16;
+  --text-muted: #5a5448;
+  --gold-accent: #bfa15a;
+  --border-soft: rgba(0, 0, 0, 0.12);
+} */
+:root {
+  /* --bg-sand: #b99a51;
+  --text-main: #000000;
+  --text-muted: #34312b;
+  --gold-accent: #97690d;
+  --border-soft: rgba(0, 0, 0, 0.12); */
+
+
+
+  --bg-sand: #c3ab6b;        /* светлее, ближе к корпусу */
+  --text-main: #1a1a16;     /* тёплый чёрный, не абсолют */
+  --text-muted: #4a463c;   /* пыльный тёплый серо-коричневый */
+  --gold-accent: #8c6a2f;  /* приглушённая латунь */
+  --border-soft: rgba(0, 0, 0, 0.10);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-sand);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* HERO */
+.hero {
+  padding: 2.5rem 2rem 0;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 0.6rem;
+  width: 240px;
+
+  opacity: 0;
+  transform: translateY(8px);
+  animation: logoFadeIn 1.2s ease-out forwards;
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+  font-family: "Cronos Pro", serif;
+  font-size: 1rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--border-soft);
+  margin: 1rem auto 1.2rem;
+}
+
+
+.hero-subline {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.75;
+}
+
+
+/* PEDALS GRID */
+.pedals {
+  padding: 4rem 2rem 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+/* PEDAL CARD */
+.pedal {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pedal img {
+  width: 100%;
+  max-width: 220px;   /* ключевой момент */
+  margin: 0 auto 1.5rem;
+  display: block;
+  border-radius: 8px;
+}
+
+.pedal-name {
+  font-family: "Cronos Pro", serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+}
+
+.pedal-mood {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  min-height: 3rem;
+  /* Aligns buttons across the row */
+}
+
+.pedal-more {
+  align-self: flex-start;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  font-family: "Cronos Pro", serif;
+  font-size: 1rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  color: var(--gold-accent);
+}
+
+.pedal-more::after {
+  content: " →";
+}
+
+.pedal-legend {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.pedal.open .pedal-legend {
+  max-height: 400px;
+}
+
+.pedal-legend p {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* FOOTER */
+.footer {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 1.2rem;
+}
+
+.footer a:hover {
+  color: var(--text-main);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero {
+    padding: 3.5rem 1.5rem 0;
+  }
+
+  .logo {
+    width: 110px;
+    margin-bottom: 0.5rem;
+  }
+
+  .about {
+    padding: 2rem 1.5rem 2.5rem;
+    font-size: 0.85rem;
+  }
+
+  .pedals {
+    gap: 2.5rem;
+    padding-top: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+}
+
+
+.footer-left a {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+
+  /* margin-right: 2.5rem; */
+}
+
+.footer-left a::after {
+  content: "·";
+  /* margin-left: 2.5rem; */
+  color: var(--border-soft);
+}
+
+.footer-left a:hover {
+  color: var(--text-main);
+}
+
+.footer-right a {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.footer-right a:hover {
+  color: var(--text-main);
+}
+
+
+.footer {
+  align-items: center;
+}
+
+
+.legal {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.legal h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+}
+
+.legal h2 {
+  font-size: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-main);
+}
+
+.legal a {
+  color: var(--gold-accent);
+  text-decoration: none;
+}
+
+/* Show Threads icon on mobile, hide label; reverse on desktop */
+.footer-social-img {
+  display: none;
+  height: 3.6em;
+  vertical-align: middle;
+}
+.footer-social-label {
+  display: inline;
+}
+@media (max-width: 600px) {
+  .footer-social-img {
+    display: inline;
+    color: var(--text-muted);
+  }
+  .footer-social-label {
+    display: none;
+  }
+}
