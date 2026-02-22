@@ -226,6 +226,7 @@ body {
   .pedals {
     gap: 2.5rem;
     padding-top: 0;
+    padding-bottom: 5.5rem;
   }
 
   .footer {
@@ -233,6 +234,7 @@ body {
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    padding-top: 0;
   }
 
 }
