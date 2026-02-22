@@ -1,4 +1,12 @@
 
+@font-face {
+  font-family: "Cronos Pro";
+  font-weight: 600;
+  font-style: normal;
+  src: url("fonts/Cronos-Pro-Semibold_12456.ttf") format("truetype");
+}
+
+
 /* :root {
   --bg-sand: #e6d2a2;
   --text-main: #1c1a16;
